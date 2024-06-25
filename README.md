@@ -82,7 +82,7 @@ authorize: async (credentials) => {
       },
 ```
 
-You must take into account that the API endpoint must return a JSON object with the user information, this information could contain the some user info (ID, name, email), and in our case the access token.
+You must take into account that the API endpoint must return a JSON object with the user information, this information could contain some user data (ID, name, email), and in our case the access token.
 
 Then the callbacks (jwt and session) are used to validate the user and store the session with the appropriate information obtained from the API.
 
@@ -142,7 +142,7 @@ export function SignInButton() {
 }
 ```
 
-This sigIn function will redirect the user to the login page (That was defined in the `pages {signIn: ...}` section of the auth.js file).
+This signIn function will redirect the user to the login page (That was defined in the `pages {signIn: ...}` section of the auth.js file).
 
 The last think to notice is the action of the login form in the sign-in-button component (sign-in-button.tsx).
 
