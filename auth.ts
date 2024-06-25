@@ -89,14 +89,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   callbacks: {
     async jwt({ token, user, account, profile }) {
-      //   console.log("Token: -----------------");
-      //   console.log(token);
-      //   console.log("User: ------------------");
-      //   console.log(user);
-      //   console.log("Account & Profile ---------------");
-      //   console.log("Account: ", account);
-      //   console.log("Profile: ", profile);
-      //   console.log("===================================================");
       if (user) {
         token.id = user.id;
         token.username = user.name;
@@ -106,12 +98,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return token;
     },
     async session({ session, token, user }) {
-      //   console.log("Session: ", session);
-      // console.log("Token in Session Callback -----------------------------");
-      // console.log("Token: ", token);
-      // console.log("User in Session Callback: ----------------------------");
-      // console.log("User: ", user);
-      // console.log("===================================================");
       session.user.id = token.id as string;
       session.user.name = token.username as string;
       session.user.accessToken = token.accessToken as string;
